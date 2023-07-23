@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateHabitDay } from '../actions/habits';
+import { Link } from 'react-router-dom';
 
 function HabitTracker({ habits, updateHabitDay }) {
   const { id } = useParams();
@@ -22,6 +23,9 @@ function HabitTracker({ habits, updateHabitDay }) {
 
   return (
     <div className="habit-tracker-container">
+      <Link to={`/`} className="btn btn-primary">
+            Back
+      </Link>
       <h1 className="habit-name">{habit.name}</h1>
       {habit.days.map((day, index) => (
         <div className="habit-day" key={index}>
