@@ -29,25 +29,36 @@ function HabitList({ habits, addHabit, deleteHabit }) {
   };
 
   return (
-    <div>
-      <h1>Habit List</h1>
-      <form onSubmit={handleAddHabit}>
+    <div className="habit-list-container">
+      <h1 className="habit-list-title">Habit List</h1>
+      <form onSubmit={handleAddHabit} className="habit-input-container">
         <input
+          className="habit-input"
           type="text"
           value={habitName}
-          onChange={e => setHabitName(e.target.value)}
-          placeholder="New habit"
+          onChange={(e) => setHabitName(e.target.value)}
+          placeholder="New habit..."
         />
-        <button type="submit">Add Habit</button>
+        <button className="habit-button" type="submit">
+          Add Habit
+        </button>
       </form>
       {habits.map((habit, index) => (
-        <div key={index}>
-          <Link to={`/habit/${index}`}>{habit.name}</Link>
-          <button onClick={() => handleDeleteHabit(index)}>Delete</button>
+        <div className="habit-item" key={index}>
+          <Link to={`/habit/${index}`} className="habit-link">
+            {habit.name}
+          </Link>
+          <button
+            className="habit-delete-button"
+            onClick={() => handleDeleteHabit(index)}
+          >
+            Delete
+          </button>
         </div>
       ))}
     </div>
   );
+  
 }
 
 const mapStateToProps = state => ({

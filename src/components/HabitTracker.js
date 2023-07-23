@@ -21,19 +21,37 @@ function HabitTracker({ habits, updateHabitDay }) {
   };
 
   return (
-    <div>
-      <h1>{habit.name}</h1>
+    <div className="habit-tracker-container">
+      <h1 className="habit-name">{habit.name}</h1>
       {habit.days.map((day, index) => (
-        <div key={index}>
-          <p>{day.date}</p>
-          <button onClick={() => handleStatusChange(index, 'Done')}>Mark as Done</button>
-          <button onClick={() => handleStatusChange(index, 'Not Done')}>Mark as Not Done</button>
-          <button onClick={() => handleStatusChange(index, 'None')}>Clear Status</button>
-          <p>Status: {day.status}</p>
+        <div className="habit-day" key={index}>
+          <p className="habit-date">{day.date}</p>
+          <div className="habit-status-buttons">
+            <button
+              className="habit-status-button habit-status-button-done"
+              onClick={() => handleStatusChange(index, 'Done')}
+            >
+              Mark as Done
+            </button>
+            <button
+              className="habit-status-button habit-status-button-not-done"
+              onClick={() => handleStatusChange(index, 'Not Done')}
+            >
+              Mark as Not Done
+            </button>
+            <button
+              className="habit-status-button habit-status-button-clear"
+              onClick={() => handleStatusChange(index, 'None')}
+            >
+              Clear Status
+            </button>
+          </div>
+          <p className="habit-status">Status: {day.status}</p>
         </div>
       ))}
     </div>
   );
+  
 }
 
 const mapStateToProps = state => ({
