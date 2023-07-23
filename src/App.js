@@ -1,10 +1,9 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import HabitList from './components/HabitList'; // Check the correct file path
-import HabitTracker from './components/HabitTracker'; // Check the correct file path
+import HabitList from './components/HabitList';
+import HabitTracker from './components/HabitTracker';
 
 function App() {
   return (

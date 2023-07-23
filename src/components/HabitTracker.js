@@ -1,4 +1,3 @@
-// src/components/HabitTracker.js
 import React from 'react';
 import { connect } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';

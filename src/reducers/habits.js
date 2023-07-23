@@ -1,5 +1,3 @@
-// reducers/habits.js
-// reducers/habits.js
 const initialState = [];
 
 function getLastSevenDays() {
@@ -11,7 +9,6 @@ function getLastSevenDays() {
     return days.reverse();
 }
 
-// reducers/habits.js
 function habitsReducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_HABIT':

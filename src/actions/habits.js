@@ -1,4 +1,3 @@
-// actions/habits.js
 export function addHabit(habit) {
     return {
       type: 'ADD_HABIT',
